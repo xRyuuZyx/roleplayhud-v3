@@ -1,0 +1,20 @@
+name: RoleplayHUD
+version: '${project.version}'
+main: id.roleplay.hud.RoleplayHUD
+api-version: '1.21'
+depend: [Vault]
+softdepend: [PlaceholderAPI, Nexo, RoleplayJobs, UIStudio]
+description: HUD roleplay (uang, gang/keluarga, logo) + menu GUI
+
+commands:
+  gang:
+    description: Sistem gang / keluarga
+    aliases: [keluarga, family]
+    usage: /gang <create|rename|invite|accept|leave|kick|transfer|disband|info|menu|deposit|withdraw>
+  hud:
+    description: Atur HUD
+    usage: /hud <toggle|reload>
+
+permissions:
+  rphud.admin:
+    default: op

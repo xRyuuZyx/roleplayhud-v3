@@ -1,0 +1,65 @@
+# Semua teks pakai format MiniMessage: https://docs.advntr.dev/minimessage/format.html
+prefix: "<gray>[<gold>RP</gold>]</gray> "
+timezone: "Asia/Makassar"       # WITA
+update-interval-ticks: 20       # 20 tick = 1 detik
+
+hud:
+  # off        = HUD dimatikan (sistem gang tetap jalan). Otomatis off kalau plugin UIStudio terpasang.
+  # nexo       = tampilan ala FiveM (kartu + bar status) pakai glyph Nexo. Butuh Nexo + PlaceholderAPI.
+  # scoreboard = tampilan sidebar biasa (tanpa resource pack).
+  mode: nexo
+  # --- Dipakai mode scoreboard ---
+  title: "<gradient:#ff5555:#ffaa00><bold>KOTA ROLEPLAY</bold></gradient>"
+  # Placeholder: %player% %money% %job% %gang% %tipe% %role% %members%
+  #              %health% %armor% %food% %online% %time% %ping%
+  lines:
+    - " "
+    - "<gray>Nama: <white>%player%"
+    - "<gray>Uang: <green>$%money%"
+    - "<gray>Job: <white>%job%"
+    - " "
+    - "<gray>%tipe%: <yellow>%gang%"
+    - "<gray>Jabatan: <white>%role%"
+    - " "
+    - "<gray><white>%time% WITA <dark_gray>| <white>%online% online"
+
+# --- Dipakai mode nexo ---
+nexo:
+  offset: 140          # geser kartu ke kanan dari tengah layar (piksel GUI). Naikkan = makin ke kanan
+  card-width: 121      # lebar texture kartu (120) + 1
+  text-padding: 15     # jarak teks dari tepi kiri kartu
+  icon-padding: 4      # jarak ikon dari tepi kiri kartu
+  card-glyph: hud_card
+  # Baris kartu di atas (dari atas ke bawah). Teks bisa pakai warna MiniMessage + placeholder.
+  rows:
+    - icon: hud_ic_money
+      text: "<green>$%money%"
+    - icon: hud_ic_job
+      text: "<white>%job%"
+    - icon: hud_ic_gang
+      text: "<yellow>%gang%"
+  # Bar status di bawah (action bar). stat: health | armor | food
+  segment-glyph: hud_seg
+  segments: 10
+  empty-color: "#33333d"
+  status-gap: 8
+  status:
+    - stat: health
+      icon: hud_ic_heart
+      color: "#ff4d4d"
+    - stat: armor
+      icon: hud_ic_armor
+      color: "#4da6ff"
+    - stat: food
+      icon: hud_ic_food
+      color: "#ffb84d"
+
+join-title:
+  enabled: true
+  title: "<gradient:#ff5555:#ffaa00><bold>KOTA ROLEPLAY</bold></gradient>"
+  subtitle: "<gray>Selamat datang, <white>%player%"
+
+gang:
+  create-cost: 5000.0
+  max-members: 20
+  invite-expire-seconds: 60
